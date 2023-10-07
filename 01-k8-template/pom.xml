@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.cognite</groupId>
-    <artifactId>k8-demo</artifactId>
+    <groupId>com.kinnovatio</groupId>
+    <artifactId>k8-template</artifactId>
     <packaging>jar</packaging>
-    <name>k8-demo</name>
-    <description>demo</description>
+    <name>k8-template</name>
+    <description>template</description>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -26,11 +26,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.cognite</groupId>
-            <artifactId>cdf-sdk-java</artifactId>
-            <version>${cdf-sdk-java.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
