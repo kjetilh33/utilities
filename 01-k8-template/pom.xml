@@ -19,7 +19,8 @@
         <slf4j-api.version>2.0.9</slf4j-api.version>
         <logback-classic.version>1.4.11</logback-classic.version>
         <smallrye.config.version>3.4.1</smallrye.config.version>
-        <io.prometheus.version>0.16.0</io.prometheus.version>
+        <io.prometheus.version>1.0.0</io.prometheus.version>
+        <io.prometheus.legacy.version>0.16.0</io.prometheus.legacy.version>
         <jib.maven.plugin.version>3.4.0</jib.maven.plugin.version>
     </properties>
 
@@ -43,19 +44,19 @@
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient</artifactId>
-            <version>${io.prometheus.version}</version>
+            <version>${io.prometheus.legacy.version}</version>
         </dependency>
         <!-- Hotspot JVM metrics-->
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient_hotspot</artifactId>
-            <version>${io.prometheus.version}</version>
+            <version>${io.prometheus.legacy.version}</version>
         </dependency>
         <!-- Exposition HTTPServer-->
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient_pushgateway</artifactId>
-            <version>${io.prometheus.version}</version>
+            <version>${io.prometheus.legacy.version}</version>
         </dependency>
     </dependencies>
     <build>

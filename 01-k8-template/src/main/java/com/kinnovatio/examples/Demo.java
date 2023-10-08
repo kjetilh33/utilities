@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 public class Demo {
-    private static Logger LOG = LoggerFactory.getLogger(Demo.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Demo.class);
 
     /*
     Configuration section. The configuration values are read from the following locations (in order of precedence):
