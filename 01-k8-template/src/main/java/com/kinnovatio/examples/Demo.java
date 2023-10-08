@@ -3,6 +3,8 @@ package com.kinnovatio.examples;
 import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.Gauge;
 import io.prometheus.client.exporter.PushGateway;
+import io.prometheus.metrics.core.metrics.Gauge;
+import io.prometheus.metrics.instrumentation.jvm.JvmMetrics;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,14 +36,24 @@ public class Demo {
     private static final Optional<String> pushGatewayUrl =
             ConfigProvider.getConfig().getOptionalValue("metrics.pushGateway.url", String.class);
 
-
     /*
     Metrics section. Define the metrics to expose.
      */
+    JvmMetrics.builder().register(); // initialize the out-of-the-box JVM metrics
+    static final io.prometheus.metrics.core.metrics.Gauge newJobDurationSeconds = Gauge.builder()
+            .name("job.duration.seconds").help("Job duration in seconds")
+            .unit(Unit.SECONDS)
+            .register();
+
+    static final io.prometheus.metrics.core.metrics.Gauge newErrorGauge= Gauge.builder()
+            .name("job.errors").help("Total job errors")
+            .register();
+
+    // Legacy metrics--replace by new metrics once pushgateway is supported in the new client library
     static final CollectorRegistry collectorRegistry = new CollectorRegistry();
-    static final Gauge jobDurationSeconds = Gauge.build()
+    static final io.prometheus.client.Gauge jobDurationSeconds = Gauge.build()
             .name("job_duration_seconds").help("Job duration in seconds").register(collectorRegistry);
-    static final Gauge errorGauge = Gauge.build()
+    static final io.prometheus.client.Gauge errorGauge = Gauge.build()
             .name("job_errors").help("Total job errors").register(collectorRegistry);
 
     /*

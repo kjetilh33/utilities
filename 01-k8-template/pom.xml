@@ -41,23 +41,36 @@
             <artifactId>smallrye-config-source-yaml</artifactId>
             <version>${smallrye.config.version}</version>
         </dependency>
+        <!-- Legacy Prometheus libraries for pushgateway -->
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient</artifactId>
             <version>${io.prometheus.legacy.version}</version>
         </dependency>
-        <!-- Hotspot JVM metrics-->
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>simpleclient_hotspot</artifactId>
-            <version>${io.prometheus.legacy.version}</version>
-        </dependency>
-        <!-- Exposition HTTPServer-->
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient_pushgateway</artifactId>
             <version>${io.prometheus.legacy.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>prometheus-metrics-core</artifactId>
+            <version>${io.prometheus.version}</version>
+        </dependency>
+        <!-- Hotspot JVM metrics-->
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>prometheus-metrics-instrumentation-jvm</artifactId>
+            <version>${io.prometheus.version}</version>
+        </dependency>
+        <!-- Exposition HTTPServer-->
+        <!--
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>prometheus-metrics-exporter-httpserver</artifactId>
+            <version>${io.prometheus.version}</version>
+        </dependency>
+        -->
     </dependencies>
     <build>
         <plugins>
