@@ -3,8 +3,9 @@ package com.kinnovatio.examples;
 import io.prometheus.client.CollectorRegistry;
 import io.prometheus.client.Gauge;
 import io.prometheus.client.exporter.PushGateway;
-import io.prometheus.metrics.core.metrics.Gauge;
+//import io.prometheus.metrics.core.metrics.Gauge;
 import io.prometheus.metrics.instrumentation.jvm.JvmMetrics;
+import io.prometheus.metrics.model.snapshots.Unit;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,13 +40,13 @@ public class Demo {
     /*
     Metrics section. Define the metrics to expose.
      */
-    JvmMetrics.builder().register(); // initialize the out-of-the-box JVM metrics
-    static final io.prometheus.metrics.core.metrics.Gauge newJobDurationSeconds = Gauge.builder()
-            .name("job.duration.seconds").help("Job duration in seconds")
+    //JvmMetrics.builder().register(); // initialize the out-of-the-box JVM metrics
+    static final io.prometheus.metrics.core.metrics.Gauge newJobDurationSeconds = io.prometheus.metrics.core.metrics.Gauge.builder()
+            .name("job.duration_seconds").help("Job duration in seconds")
             .unit(Unit.SECONDS)
             .register();
 
-    static final io.prometheus.metrics.core.metrics.Gauge newErrorGauge= Gauge.builder()
+    static final io.prometheus.metrics.core.metrics.Gauge newErrorGauge= io.prometheus.metrics.core.metrics.Gauge.builder()
             .name("job.errors").help("Total job errors")
             .register();
 
