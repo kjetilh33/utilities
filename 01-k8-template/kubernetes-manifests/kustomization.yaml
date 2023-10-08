@@ -3,15 +3,15 @@ kind: Kustomization
 
 #namespace: default
 commonLabels:
-  app.kubernetes.io/name: k8-demo
-  app: k8-demo
+  app.kubernetes.io/name: k8-template
+  app: k8-template
 resources:
-  - k8-demo.job.yaml
+  - k8-template.job.yaml
 
 # The generator will convert the config.yaml file into a K8 config map which can be mapped
 # into the container
 configMapGenerator:
-  - name: k8-demo-config
+  - name: k8-template-config
     files:
       - config.yaml=config.yaml
 

@@ -21,12 +21,12 @@ The minimum requirements for running the module locally:
 
 On Linux/MaxOS:
 ```console
-$ mvn compile exec:java -Dexec.mainClass="com.cognite.examples.Demo"
+$ mvn compile exec:java -Dexec.mainClass="com.kinnovatio.examples.Demo"
 ```
 
 On Windows Powershell:
 ```ps
-> mvn compile exec:java -D exec.mainClass="com.cognite.examples.Demo"
+> mvn compile exec:java -D exec.mainClass="com.kinnovatio.examples.Demo"
 ```
 
 ### Run as a container on Kubernetes
