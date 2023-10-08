@@ -9,7 +9,8 @@ build:
   - image: k8-template                                         # Image name
     context: .
     jib:                                                   # Use Jib as the container builder
-      fromImage: "gcr.io/distroless/java17-debian12"       # Use a "distroless" base image
+      #fromImage: "gcr.io/distroless/java17-debian12"       # Use a "distroless" base image
+      fromImage: amazoncorretto:21
   tagPolicy:
     dateTime:                                              # The image will be tagged with the build timestamp
       format: "20060102T150405"
