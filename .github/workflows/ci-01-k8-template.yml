@@ -1,0 +1,12 @@
+name: ci-01-k8-templae
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "01-k8-template/**"
+      
+jobs:
+  build-01-k8-template:
+    uses: ./.github/workflows/java-maven-skaffold-build.yml
+    with:
+      repositoryFolder: "./01-k8-template/" 
