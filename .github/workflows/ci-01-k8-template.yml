@@ -1,4 +1,4 @@
-name: ci-01-k8-templae
+name: ci-01-k8-template
 on:
   workflow_dispatch:
   pull_request:
