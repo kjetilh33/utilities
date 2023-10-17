@@ -10,7 +10,7 @@ build:
     context: .
     jib:                                                   # Use Jib as the container builder
       #fromImage: "gcr.io/distroless/java17-debian12"       # Use a "distroless" base image
-      fromImage: amazoncorretto:21
+      fromImage: eclipse-temurin:21-jre
   tagPolicy:
     dateTime:                                              # The image will be tagged with the build timestamp
       format: "20060102T150405"
