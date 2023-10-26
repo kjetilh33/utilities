@@ -42,7 +42,7 @@
         <io.prometheus.version>1.0.0</io.prometheus.version>
         <io.prometheus.legacy.version>0.16.0</io.prometheus.legacy.version>
 
-        <junit.version>5.9.3</junit.version>
+        <junit.version>5.10.0</junit.version>
 
         <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
