@@ -7,7 +7,7 @@
         "installMaven": "true"
     },
     
-    "ghcr.io/rio/features/k3d:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
     
     "ghcr.io/rio/features/kustomize:1": {},
     
