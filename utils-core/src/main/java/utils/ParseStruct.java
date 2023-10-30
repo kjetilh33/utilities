@@ -33,9 +33,9 @@ public class ParseStruct {
      */
     public static String parseStringDelimited(Struct struct, String path, String delimiter) {
         Objects.requireNonNull(struct, "Struct cannot be null");
-        Validations.isTrue(null != path && !path.isBlank(),
+        Validate.isTrue(null != path && !path.isBlank(),
                 "Path cannot be null or empty");
-        Validations.isTrue(null != delimiter && !delimiter.isBlank(),
+        Validate.isTrue(null != delimiter && !delimiter.isBlank(),
                 "Delimiter cannot be null or empty");
 
         List<String> pathList = Arrays.asList(path.split("\\."));

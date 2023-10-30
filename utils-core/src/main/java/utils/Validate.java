@@ -1,10 +1,10 @@
 package utils;
 
-public class Validations {
+public class Validate {
     static final String DEFAULT_ERROR_MESSAGE = "Failed precondition validation.";
 
     static void isTrue(boolean condition) {
-        Validations.isTrue(condition, DEFAULT_ERROR_MESSAGE);
+        Validate.isTrue(condition, DEFAULT_ERROR_MESSAGE);
     }
 
     static void isTrue(boolean condition, String errorMessage) {
