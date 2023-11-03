@@ -36,6 +36,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.release>21</maven.compiler.release>
 
+        <auto-value.version>1.10.2</auto-value.version>
         <slf4j-api.version>2.0.9</slf4j-api.version>
         <logback-classic.version>1.4.11</logback-classic.version>
         <smallrye.config.version>3.4.1</smallrye.config.version>
@@ -50,6 +51,7 @@
 
         <junit.version>5.10.0</junit.version>
 
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.6.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
         <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
@@ -92,6 +94,11 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.auto.value</groupId>
+            <artifactId>auto-value-annotations</artifactId>
+            <version>${auto-value.version}</version>
         </dependency>
         <!-- Legacy Prometheus libraries for pushgateway -->
         <dependency>
@@ -174,7 +181,18 @@
         </pluginManagement>
 
         <plugins>
-            
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                    <path>
+                        <groupId>com.google.auto.value</groupId>
+                        <artifactId>auto-value</artifactId>
+                        <version>${auto-value.version}</version>
+                    </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>            
         </plugins>
     </build>
 
@@ -184,11 +202,11 @@
             <distributionManagement>
                 <snapshotRepository>
                     <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
                 </snapshotRepository>
                 <repository>
                     <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
             <build>
