@@ -41,7 +41,7 @@
         <logback-classic.version>1.4.11</logback-classic.version>
         <smallrye.config.version>3.4.4</smallrye.config.version>
         <jackson.version>2.15.3</jackson.version>
-        <io.prometheus.version>1.0.0</io.prometheus.version>
+        <io.prometheus.version>1.1.0</io.prometheus.version>
         <io.prometheus.legacy.version>0.16.0</io.prometheus.legacy.version>
 
         <!-- protobuf paths -->
