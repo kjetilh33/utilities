@@ -30,4 +30,5 @@ jobs:
           skaffold-version: 2.8.0
           working-directory: ${{ inputs.repositoryFolder }}
           command: build
+          repository: local
           push: false
