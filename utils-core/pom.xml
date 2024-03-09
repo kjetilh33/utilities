@@ -39,7 +39,7 @@
         <auto-value.version>1.10.4</auto-value.version>
         <slf4j-api.version>2.0.12</slf4j-api.version>
         <logback-classic.version>1.5.3</logback-classic.version>
-        <smallrye.config.version>3.6.0</smallrye.config.version>
+        <smallrye.config.version>3.6.1</smallrye.config.version>
         <jackson.version>2.16.1</jackson.version>
         <io.prometheus.version>1.1.0</io.prometheus.version>
         <io.prometheus.legacy.version>0.16.0</io.prometheus.legacy.version>
