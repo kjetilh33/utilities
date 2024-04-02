@@ -21,7 +21,7 @@
         <smallrye.config.version>3.7.1</smallrye.config.version>
         <io.prometheus.version>1.2.0</io.prometheus.version>
         <io.prometheus.legacy.version>0.16.0</io.prometheus.legacy.version>
-        <jib.maven.plugin.version>3.4.1</jib.maven.plugin.version>
+        <jib.maven.plugin.version>3.4.2</jib.maven.plugin.version>
     </properties>
 
     <dependencies>
