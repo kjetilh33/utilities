@@ -1,4 +1,4 @@
-package utils.queue;
+package com.kinnovatio.utils.queue;
 
 public class PublishQueue {
     

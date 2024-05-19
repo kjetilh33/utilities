@@ -6,7 +6,7 @@
  * The original code has been changed to use Objects.requireNonNull() instead of the Google Preconditions
  * library.
  */
-package utils.statestore;
+package com.kinnovatio.utils.statestore;
 
 import com.google.auto.value.AutoValue;
 

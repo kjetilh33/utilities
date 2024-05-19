@@ -3,7 +3,7 @@
  * inspired by Cognite Java SDK for CDF, is Cognite AS (http://www.cognite.com/).
  * Copyright 2022 Cogntite AS. All Rights Reserved.
  */
-package utils;
+package com.kinnovatio.utils;
 
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;

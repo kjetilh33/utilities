@@ -20,7 +20,6 @@
         <logback-classic.version>1.5.6</logback-classic.version>
         <smallrye.config.version>3.8.1</smallrye.config.version>
         <io.prometheus.version>1.3.0</io.prometheus.version>
-        <io.prometheus.legacy.version>0.16.0</io.prometheus.legacy.version>
         <jib.maven.plugin.version>3.4.2</jib.maven.plugin.version>
     </properties>
 
@@ -41,20 +40,16 @@
             <artifactId>smallrye-config-source-yaml</artifactId>
             <version>${smallrye.config.version}</version>
         </dependency>
-        <!-- Legacy Prometheus libraries for pushgateway -->
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>simpleclient</artifactId>
-            <version>${io.prometheus.legacy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>simpleclient_pushgateway</artifactId>
-            <version>${io.prometheus.legacy.version}</version>
-        </dependency>
+        <!-- Prometheus core libraries -->
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>prometheus-metrics-core</artifactId>
+            <version>${io.prometheus.version}</version>
+        </dependency>
+        <!-- Pushgateway exporter-->
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>prometheus-metrics-exporter-pushgateway</artifactId>
             <version>${io.prometheus.version}</version>
         </dependency>
         <!-- Hotspot JVM metrics-->

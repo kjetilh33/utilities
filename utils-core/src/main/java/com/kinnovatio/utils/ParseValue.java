@@ -6,7 +6,7 @@
  * The original code has been changed to use Objects.requireNonNull() instead of the Google Preconditions
  * library.
  */
-package utils;
+package com.kinnovatio.utils;
 
 import com.google.protobuf.Value;
 

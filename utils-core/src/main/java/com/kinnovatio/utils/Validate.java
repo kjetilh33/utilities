@@ -1,4 +1,4 @@
-package utils;
+package com.kinnovatio.utils;
 
 public class Validate {
     static final String DEFAULT_ERROR_MESSAGE = "Failed precondition validation.";

@@ -6,10 +6,11 @@
  * The original code has been changed to use Objects.requireNonNull() instead of the Google Preconditions
  * library.
  */
-package utils.statestore;
+package com.kinnovatio.utils.statestore;
 
-import com.cognite.client.servicesV1.util.JsonUtil;
+//import com.cognite.client.servicesV1.util.JsonUtil;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.google.auto.value.AutoValue;
@@ -31,9 +32,10 @@ import java.util.Map;
  */
 @AutoValue
 public abstract class LocalStateStore extends AbstractStateStore {
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    private final ObjectReader objectReader = JsonUtil.getObjectMapperInstance().reader();
-    private final ObjectWriter objectWriter = JsonUtil.getObjectMapperInstance().writer();
+    private static final ObjectReader objectReader = objectMapper.reader();
+    private static final ObjectWriter objectWriter = objectMapper.writer();
 
     private static Builder builder() {
         return new AutoValue_LocalStateStore.Builder()

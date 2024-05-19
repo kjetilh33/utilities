@@ -6,9 +6,9 @@
  * The original code has been changed to use Objects.requireNonNull() instead of the Google Preconditions
  * library.
  */
-package utils.statestore;
+package com.kinnovatio.utils.statestore;
 
-import com.cognite.client.util.ParseValue;
+import com.kinnovatio.utils.ParseValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.util.Values;
 import org.slf4j.Logger;
