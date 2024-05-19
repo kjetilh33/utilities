@@ -1,13 +1,17 @@
 package com.kinnovatio.examples;
 
+import io.prometheus.metrics.core.datapoints.Timer;
 import io.prometheus.metrics.core.metrics.Gauge;
 import io.prometheus.metrics.exporter.pushgateway.PushGateway;
+import io.prometheus.metrics.model.registry.PrometheusRegistry;
 import io.prometheus.metrics.model.snapshots.Unit;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URL;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Optional;
 
 
@@ -38,7 +42,7 @@ public class Demo {
     Metrics section. Define the metrics to expose.
      */
     //JvmMetrics.builder().register(); // initialize the out-of-the-box JVM metrics
-    static final CollectorRegistry collectorRegistry = new CollectorRegistry();
+    static final PrometheusRegistry collectorRegistry = new PrometheusRegistry();
     static final Gauge jobDurationSeconds = Gauge.builder()
             .name("job.duration_seconds").help("Job duration in seconds")
             .unit(Unit.SECONDS)
@@ -77,20 +81,22 @@ public class Demo {
      */
     private static void run() throws Exception {
         LOG.info("Starting container...");
-        Gauge.Timer jobDurationTimer = jobDurationSeconds.startTimer();
+        Timer jobDurationTimer = jobDurationSeconds.startTimer();
 
         LOG.info("Starting some work...");
         Thread.sleep(3000);
 
         LOG.info("Finished work");
-        jobDurationTimer.setDuration();
+
+        // automatically records the duration onto the jobDurationSeconds gauge.
+        jobDurationTimer.observeDuration();
 
         // The job completion metric is only added to the registry after job success,
         // so that a previous success in the Pushgateway isn't overwritten on failure.
         Gauge jobCompletionTimeStamp = Gauge.builder()
                 .name("job_completion_timestamp").help("Job completion time stamp")
                 .register(collectorRegistry);
-        jobCompletionTimeStamp.setToCurrentTime();
+        jobCompletionTimeStamp.set(Instant.now().getEpochSecond());
     }
 
     /*
@@ -104,7 +110,8 @@ public class Demo {
                 PushGateway pg = PushGateway.builder()
                         .address(pushGatewayUrl.get())
                         .job(metricsJobName)
-                        .registry(collectorRegistry);
+                        .registry(collectorRegistry)
+                        .build();
                 pg.push();
                 isSuccess = true;
             } catch (Exception e) {
