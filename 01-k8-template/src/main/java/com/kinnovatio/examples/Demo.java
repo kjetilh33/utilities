@@ -1,7 +1,7 @@
 package com.kinnovatio.examples;
 
+import io.prometheus.metrics.core.metrics.Gauge;
 import io.prometheus.metrics.exporter.pushgateway.PushGateway;
-import io.prometheus.metrics.instrumentation.jvm.JvmMetrics;
 import io.prometheus.metrics.model.snapshots.Unit;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.slf4j.Logger;
@@ -102,9 +102,9 @@ public class Demo {
             try {
                 LOG.info("Pushing metrics to {}", pushGatewayUrl);
                 PushGateway pg = PushGateway.builder()
-                        .address(new URL(pushGatewayUrl.get()))
+                        .address(pushGatewayUrl.get())
                         .job(metricsJobName)
-                        .regitry(collectorRegistry);
+                        .registry(collectorRegistry);
                 pg.push();
                 isSuccess = true;
             } catch (Exception e) {
