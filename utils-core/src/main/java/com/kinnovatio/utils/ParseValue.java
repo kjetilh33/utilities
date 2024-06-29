@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * This class hosts methods for parsing {@code Value} objects to various target types (String, double, etc.).
  *
- * This can be helpful in particular when working with CDF.Raw and Json (parsed to {@code Struct}).
+ * This can be helpful in particular when working with Protobuf types.
  */
 public class ParseValue {
 
