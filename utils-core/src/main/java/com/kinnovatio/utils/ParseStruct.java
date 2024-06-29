@@ -54,9 +54,9 @@ public class ParseStruct {
         Objects.requireNonNull(path, "Path cannot be null.");
 
         List<String> returnList = new ArrayList<>();
-        if (path.size() > 0 && struct.containsFields(path.get(0))) {
+        if (!path.isEmpty() && struct.containsFields(path.getFirst())) {
             returnList.addAll(parseStringList(
-                    struct.getFieldsOrDefault(path.get(0), Values.of("")),
+                    struct.getFieldsOrDefault(path.getFirst(), Values.of("")),
                     path.subList(1, path.size())));
         }
 
@@ -78,7 +78,7 @@ public class ParseStruct {
         Objects.requireNonNull(path, "Path cannot be null.");
 
         List<String> returnList = new ArrayList<>();
-        if (path.size() > 0) {
+        if (!path.isEmpty()) {
             // We are not at the child node yet, so we have to unwrap and extract the next level.
             // This is only possible for a Struct or ValueList.
             if (value.hasStructValue()) {
