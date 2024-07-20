@@ -46,11 +46,11 @@ public class Demo {
     static final Gauge jobDurationSeconds = Gauge.builder()
             .name("job.duration_seconds").help("Job duration in seconds")
             .unit(Unit.SECONDS)
-            .register();
+            .register(collectorRegistry);
 
     static final Gauge errorGauge = Gauge.builder()
             .name("job.errors").help("Total job errors")
-            .register();
+            .register(collectorRegistry);
 
 
     /*
