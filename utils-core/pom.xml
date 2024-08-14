@@ -47,7 +47,7 @@
         <protobuf.output.directory>${project.build.directory}/generated-sources/proto</protobuf.output.directory>
         <protobuf.version>4.27.3</protobuf.version>
 
-        <junit.version>5.10.3</junit.version>
+        <junit.version>5.11.0</junit.version>
 
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.8.0</maven-javadoc-plugin.version>
