@@ -20,7 +20,7 @@
         <logback-classic.version>1.5.18</logback-classic.version>
         <smallrye.config.version>3.12.3</smallrye.config.version>
         <io.prometheus.version>1.3.6</io.prometheus.version>
-        <jib.maven.plugin.version>3.4.4</jib.maven.plugin.version>
+        <jib.maven.plugin.version>3.4.5</jib.maven.plugin.version>
     </properties>
 
     <dependencies>
