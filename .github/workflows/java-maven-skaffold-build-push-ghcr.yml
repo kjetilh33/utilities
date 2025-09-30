@@ -9,8 +9,8 @@ on:
         required: false
         type: string
       javaVersion:
-        description: 'The Java version to build and deploy. Default is Java 21'
-        default: '21'
+        description: 'The Java version to build and deploy. Default is Java 25'
+        default: '25'
         required: false
         type: string
 env:
