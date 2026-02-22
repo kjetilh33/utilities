@@ -35,7 +35,7 @@ jobs:
       - name: Build image with Skaffold
         uses: hiberbee/github-action-skaffold@1.27.0
         with:
-          skaffold-version: 2.16.1
+          skaffold-version: 2.17.2
           working-directory: ${{ inputs.repositoryFolder }}
           command: build
           push: true
